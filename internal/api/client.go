@@ -83,7 +83,7 @@ func (c *Client)PostMeasurementList(measurementList []CreateMeasurementJSON)([]M
 	}
 	// Set Request headers
 	req.Header.Set("Content-Type","application/json")
-	req.Header.Set("X-API-Key", c.ApiKey)	
+	req.Header.Set("Authorization","ApiKey "+ c.ApiKey)	
 	//Send the request
 	res, err := c.BaseClient.Do(req)
 	if err != nil{
